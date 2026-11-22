@@ -25,6 +25,7 @@ LOCAL_LANDING = "data/landing"
 LOCAL_WAREHOUSE = ".warehouse"
 REFERENCE_FILE = "reference/published_stats.csv"
 LOCAL_EXPECTED_FILE = "results/local_expected.json"
+RUN_SUMMARY_FILE = "results/run_summary.json"
 
 # Table names (unqualified; the store adds catalog and schema)
 RAW_SERVICES = "raw_services"
