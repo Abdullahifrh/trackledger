@@ -49,13 +49,15 @@ One job, `trackledger-monthly`, runs four tasks in order: `ingest_landing`, `bui
 
 **Row balance.** For every services file, the plain-text line count must equal the raw rows, and raw rows must equal clean plus quarantined plus duplicates. A file that does not balance fails the task.
 
-**Quality rules.** Drop rules send rows to `quarantine`: a value that does not fit the schema, a missing service or station, a missing operating day, a delay outside 0 to 1440 minutes. Warn rules only count: a station code that is not in the stations list (mostly metro and foreign stops missing from the 2023 list), a disruption without an end time, a stated duration that differs from end minus start. The clean task fails if more than 1% of a batch is quarantined.
+**Quality rules.** Drop rules send rows to `quarantine`: a value that does not fit the schema, a missing service or station, a missing operating day, a delay outside 0 to 1440 minutes. Warn rules only count: a station code that is not in the stations list (for example metro and foreign stops missing from the 2023 list), a disruption without an end time, a stated duration that differs from end minus start. The clean task fails if more than 1% of a batch is quarantined.
 
 **Time zones.** The session time zone is `Europe/Amsterdam`. Services timestamps carry their own offset. Disruption times are local wall-clock times, so a disruption belongs to the month of its local start time. Two real disruptions cross a daylight-saving change and their stated durations only match end minus start when the times are read as Dutch local time. A test proves this.
 
 **Reconciliation.** The reference file holds 36 published figures: the count and average duration for each month and for the year, and the ten largest causes of 2025. Tolerances were fixed before the first run: counts must match exactly, the average duration within 1 minute because the site rounds to minutes. A figure outside its tolerance fails the job unless the contract lists it as a known gap with a documented reason. Filters are never changed to close a gap.
 
 Rijden de Treinen's documentation says the statistics use the statistical cause, which keeps the descriptive cause when NS later changes it to a generic one such as an earlier disruption. TrackLedger therefore counts causes on `statistical_cause_en`.
+
+**Parity.** The same tasks run locally on PySpark and write `results/local_expected.json`. `scripts/check_parity.py` compares a Databricks run with it, table by table, and writes `results/run_summary.json`.
 
 ## KPI definitions
 
