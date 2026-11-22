@@ -1,0 +1,942 @@
+{
+  "final": {
+    "disruptions_by_group_year": [
+      {
+        "cause_group": "accidents",
+        "disruptions": 443
+      },
+      {
+        "cause_group": "engineering work",
+        "disruptions": 149
+      },
+      {
+        "cause_group": "external",
+        "disruptions": 866
+      },
+      {
+        "cause_group": "infrastructure",
+        "disruptions": 1576
+      },
+      {
+        "cause_group": "logistical",
+        "disruptions": 135
+      },
+      {
+        "cause_group": "rolling stock",
+        "disruptions": 2951
+      },
+      {
+        "cause_group": "staff",
+        "disruptions": 201
+      },
+      {
+        "cause_group": "unknown",
+        "disruptions": 304
+      },
+      {
+        "cause_group": "weather",
+        "disruptions": 51
+      }
+    ],
+    "operator_monthly_rows": 171,
+    "operators_year": [
+      {
+        "cancelled_arrivals": 42,
+        "cancelled_share": 0.009101,
+        "delayed_arrivals": 1648,
+        "has_delay_data": true,
+        "measured_arrivals": 4573,
+        "on_time_arrivals": 4162,
+        "on_time_share": 0.910125,
+        "operator": "137",
+        "planned_arrivals": 4615
+      },
+      {
+        "cancelled_arrivals": 178,
+        "cancelled_share": 0.028018,
+        "delayed_arrivals": 2198,
+        "has_delay_data": true,
+        "measured_arrivals": 6175,
+        "on_time_arrivals": 5664,
+        "on_time_share": 0.917247,
+        "operator": "154",
+        "planned_arrivals": 6353
+      },
+      {
+        "cancelled_arrivals": 11,
+        "cancelled_share": 0.002561,
+        "delayed_arrivals": 1370,
+        "has_delay_data": true,
+        "measured_arrivals": 4284,
+        "on_time_arrivals": 3996,
+        "on_time_share": 0.932773,
+        "operator": "155",
+        "planned_arrivals": 4295
+      },
+      {
+        "cancelled_arrivals": 6,
+        "cancelled_share": 0.078947,
+        "delayed_arrivals": 32,
+        "has_delay_data": true,
+        "measured_arrivals": 70,
+        "on_time_arrivals": 47,
+        "on_time_share": 0.671429,
+        "operator": "200",
+        "planned_arrivals": 76
+      },
+      {
+        "cancelled_arrivals": 301,
+        "cancelled_share": 0.06525,
+        "delayed_arrivals": 1769,
+        "has_delay_data": true,
+        "measured_arrivals": 4312,
+        "on_time_arrivals": 3071,
+        "on_time_share": 0.712199,
+        "operator": "202",
+        "planned_arrivals": 4613
+      },
+      {
+        "cancelled_arrivals": 0,
+        "cancelled_share": 0.0,
+        "delayed_arrivals": 29,
+        "has_delay_data": true,
+        "measured_arrivals": 46,
+        "on_time_arrivals": 19,
+        "on_time_share": 0.413043,
+        "operator": "211",
+        "planned_arrivals": 46
+      },
+      {
+        "cancelled_arrivals": 0,
+        "cancelled_share": 0.0,
+        "delayed_arrivals": 1313,
+        "has_delay_data": true,
+        "measured_arrivals": 3056,
+        "on_time_arrivals": 2736,
+        "on_time_share": 0.895288,
+        "operator": "63",
+        "planned_arrivals": 3056
+      },
+      {
+        "cancelled_arrivals": 68,
+        "cancelled_share": 0.008667,
+        "delayed_arrivals": 2523,
+        "has_delay_data": true,
+        "measured_arrivals": 7778,
+        "on_time_arrivals": 7313,
+        "on_time_share": 0.940216,
+        "operator": "69",
+        "planned_arrivals": 7846
+      },
+      {
+        "cancelled_arrivals": 2,
+        "cancelled_share": 0.004484,
+        "delayed_arrivals": 272,
+        "has_delay_data": true,
+        "measured_arrivals": 444,
+        "on_time_arrivals": 352,
+        "on_time_share": 0.792793,
+        "operator": "970",
+        "planned_arrivals": 446
+      },
+      {
+        "cancelled_arrivals": 141963,
+        "cancelled_share": 0.04276,
+        "delayed_arrivals": 1080938,
+        "has_delay_data": true,
+        "measured_arrivals": 3178057,
+        "on_time_arrivals": 2942390,
+        "on_time_share": 0.925846,
+        "operator": "Arriva",
+        "planned_arrivals": 3320020
+      },
+      {
+        "cancelled_arrivals": 21004,
+        "cancelled_share": 0.024953,
+        "delayed_arrivals": 251419,
+        "has_delay_data": true,
+        "measured_arrivals": 820737,
+        "on_time_arrivals": 767683,
+        "on_time_share": 0.935358,
+        "operator": "Blauwnet",
+        "planned_arrivals": 841741
+      },
+      {
+        "cancelled_arrivals": 384,
+        "cancelled_share": 0.020757,
+        "delayed_arrivals": 6333,
+        "has_delay_data": true,
+        "measured_arrivals": 18116,
+        "on_time_arrivals": 17061,
+        "on_time_share": 0.941764,
+        "operator": "Blauwnet A",
+        "planned_arrivals": 18500
+      },
+      {
+        "cancelled_arrivals": 45,
+        "cancelled_share": 0.003449,
+        "delayed_arrivals": 3291,
+        "has_delay_data": true,
+        "measured_arrivals": 13002,
+        "on_time_arrivals": 12415,
+        "on_time_share": 0.954853,
+        "operator": "Blauwnet K",
+        "planned_arrivals": 13047
+      },
+      {
+        "cancelled_arrivals": 2045,
+        "cancelled_share": 0.019039,
+        "delayed_arrivals": 33551,
+        "has_delay_data": true,
+        "measured_arrivals": 105366,
+        "on_time_arrivals": 99902,
+        "on_time_share": 0.948143,
+        "operator": "Breng",
+        "planned_arrivals": 107411
+      },
+      {
+        "cancelled_arrivals": 5838,
+        "cancelled_share": 0.016916,
+        "delayed_arrivals": 1,
+        "has_delay_data": false,
+        "measured_arrivals": 339280,
+        "on_time_arrivals": 339280,
+        "on_time_share": null,
+        "operator": "DB",
+        "planned_arrivals": 345118
+      },
+      {
+        "cancelled_arrivals": 203,
+        "cancelled_share": 0.010588,
+        "delayed_arrivals": 0,
+        "has_delay_data": false,
+        "measured_arrivals": 18970,
+        "on_time_arrivals": 18970,
+        "on_time_share": null,
+        "operator": "Deutsche B",
+        "planned_arrivals": 19173
+      },
+      {
+        "cancelled_arrivals": 84,
+        "cancelled_share": 0.022418,
+        "delayed_arrivals": 1771,
+        "has_delay_data": true,
+        "measured_arrivals": 3663,
+        "on_time_arrivals": 2244,
+        "on_time_share": 0.612613,
+        "operator": "Eu Sleeper",
+        "planned_arrivals": 3747
+      },
+      {
+        "cancelled_arrivals": 22483,
+        "cancelled_share": 0.112874,
+        "delayed_arrivals": 59923,
+        "has_delay_data": true,
+        "measured_arrivals": 176704,
+        "on_time_arrivals": 138140,
+        "on_time_share": 0.781759,
+        "operator": "Eurobahn",
+        "planned_arrivals": 199187
+      },
+      {
+        "cancelled_arrivals": 6443,
+        "cancelled_share": 0.037722,
+        "delayed_arrivals": 35845,
+        "has_delay_data": true,
+        "measured_arrivals": 164361,
+        "on_time_arrivals": 145660,
+        "on_time_share": 0.88622,
+        "operator": "NMBS",
+        "planned_arrivals": 170804
+      },
+      {
+        "cancelled_arrivals": 852029,
+        "cancelled_share": 0.065888,
+        "delayed_arrivals": 3729463,
+        "has_delay_data": true,
+        "measured_arrivals": 12079402,
+        "on_time_arrivals": 10876592,
+        "on_time_share": 0.900425,
+        "operator": "NS",
+        "planned_arrivals": 12931431
+      },
+      {
+        "cancelled_arrivals": 30278,
+        "cancelled_share": 0.089914,
+        "delayed_arrivals": 135059,
+        "has_delay_data": true,
+        "measured_arrivals": 306467,
+        "on_time_arrivals": 215431,
+        "on_time_share": 0.70295,
+        "operator": "NS Int",
+        "planned_arrivals": 336745
+      },
+      {
+        "cancelled_arrivals": 9806,
+        "cancelled_share": 0.016779,
+        "delayed_arrivals": 182889,
+        "has_delay_data": true,
+        "measured_arrivals": 574610,
+        "on_time_arrivals": 536757,
+        "on_time_share": 0.934124,
+        "operator": "R-net",
+        "planned_arrivals": 584416
+      },
+      {
+        "cancelled_arrivals": 134,
+        "cancelled_share": 0.011693,
+        "delayed_arrivals": 2640,
+        "has_delay_data": true,
+        "measured_arrivals": 11326,
+        "on_time_arrivals": 11161,
+        "on_time_share": 0.985432,
+        "operator": "R-net NS",
+        "planned_arrivals": 11460
+      },
+      {
+        "cancelled_arrivals": 310,
+        "cancelled_share": 0.026763,
+        "delayed_arrivals": 3457,
+        "has_delay_data": true,
+        "measured_arrivals": 11273,
+        "on_time_arrivals": 10744,
+        "on_time_share": 0.953074,
+        "operator": "R-net Qb",
+        "planned_arrivals": 11583
+      },
+      {
+        "cancelled_arrivals": 4266,
+        "cancelled_share": 0.017618,
+        "delayed_arrivals": 71396,
+        "has_delay_data": true,
+        "measured_arrivals": 237873,
+        "on_time_arrivals": 222761,
+        "on_time_share": 0.93647,
+        "operator": "RRReis",
+        "planned_arrivals": 242139
+      },
+      {
+        "cancelled_arrivals": 794,
+        "cancelled_share": 0.028568,
+        "delayed_arrivals": 7929,
+        "has_delay_data": true,
+        "measured_arrivals": 26999,
+        "on_time_arrivals": 25586,
+        "on_time_share": 0.947665,
+        "operator": "RRReis A",
+        "planned_arrivals": 27793
+      },
+      {
+        "cancelled_arrivals": 254,
+        "cancelled_share": 0.027495,
+        "delayed_arrivals": 3580,
+        "has_delay_data": true,
+        "measured_arrivals": 8984,
+        "on_time_arrivals": 8316,
+        "on_time_share": 0.925646,
+        "operator": "RRReis K",
+        "planned_arrivals": 9238
+      },
+      {
+        "cancelled_arrivals": 144,
+        "cancelled_share": 0.091603,
+        "delayed_arrivals": 717,
+        "has_delay_data": true,
+        "measured_arrivals": 1428,
+        "on_time_arrivals": 1168,
+        "on_time_share": 0.817927,
+        "operator": "TCS",
+        "planned_arrivals": 1572
+      },
+      {
+        "cancelled_arrivals": 1199,
+        "cancelled_share": 0.041515,
+        "delayed_arrivals": 14779,
+        "has_delay_data": true,
+        "measured_arrivals": 27682,
+        "on_time_arrivals": 18784,
+        "on_time_share": 0.678564,
+        "operator": "TCS OV",
+        "planned_arrivals": 28881
+      },
+      {
+        "cancelled_arrivals": 5511,
+        "cancelled_share": 0.057005,
+        "delayed_arrivals": 27931,
+        "has_delay_data": true,
+        "measured_arrivals": 91164,
+        "on_time_arrivals": 70836,
+        "on_time_share": 0.777017,
+        "operator": "VIAS",
+        "planned_arrivals": 96675
+      }
+    ],
+    "punctuality_monthly": [
+      {
+        "arrivals_without_delay_data": 33718,
+        "cancelled_arrivals": 107665,
+        "cancelled_share": 0.06402,
+        "delayed_arrivals": 508545,
+        "has_delay_data": true,
+        "measured_arrivals": 1540359,
+        "on_time_arrivals": 1387589,
+        "on_time_share": 0.900822,
+        "planned_arrivals": 1681742,
+        "service_month": "2025-01"
+      },
+      {
+        "arrivals_without_delay_data": 30017,
+        "cancelled_arrivals": 79784,
+        "cancelled_share": 0.052793,
+        "delayed_arrivals": 436386,
+        "has_delay_data": true,
+        "measured_arrivals": 1401463,
+        "on_time_arrivals": 1269433,
+        "on_time_share": 0.905791,
+        "planned_arrivals": 1511264,
+        "service_month": "2025-02"
+      },
+      {
+        "arrivals_without_delay_data": 32876,
+        "cancelled_arrivals": 76477,
+        "cancelled_share": 0.046894,
+        "delayed_arrivals": 448782,
+        "has_delay_data": true,
+        "measured_arrivals": 1521503,
+        "on_time_arrivals": 1386892,
+        "on_time_share": 0.911528,
+        "planned_arrivals": 1630856,
+        "service_month": "2025-03"
+      },
+      {
+        "arrivals_without_delay_data": 31761,
+        "cancelled_arrivals": 67612,
+        "cancelled_share": 0.042616,
+        "delayed_arrivals": 437625,
+        "has_delay_data": true,
+        "measured_arrivals": 1487181,
+        "on_time_arrivals": 1358176,
+        "on_time_share": 0.913255,
+        "planned_arrivals": 1586554,
+        "service_month": "2025-04"
+      },
+      {
+        "arrivals_without_delay_data": 32892,
+        "cancelled_arrivals": 64186,
+        "cancelled_share": 0.039265,
+        "delayed_arrivals": 445093,
+        "has_delay_data": true,
+        "measured_arrivals": 1537590,
+        "on_time_arrivals": 1405615,
+        "on_time_share": 0.914168,
+        "planned_arrivals": 1634668,
+        "service_month": "2025-05"
+      },
+      {
+        "arrivals_without_delay_data": 31228,
+        "cancelled_arrivals": 200679,
+        "cancelled_share": 0.128012,
+        "delayed_arrivals": 396219,
+        "has_delay_data": true,
+        "measured_arrivals": 1335749,
+        "on_time_arrivals": 1218400,
+        "on_time_share": 0.912147,
+        "planned_arrivals": 1567656,
+        "service_month": "2025-06"
+      },
+      {
+        "arrivals_without_delay_data": 24358,
+        "cancelled_arrivals": 89469,
+        "cancelled_share": 0.055404,
+        "delayed_arrivals": 414715,
+        "has_delay_data": true,
+        "measured_arrivals": 1501023,
+        "on_time_arrivals": 1381481,
+        "on_time_share": 0.92036,
+        "planned_arrivals": 1614850,
+        "service_month": "2025-07"
+      },
+      {
+        "arrivals_without_delay_data": 23335,
+        "cancelled_arrivals": 73700,
+        "cancelled_share": 0.046554,
+        "delayed_arrivals": 405255,
+        "has_delay_data": true,
+        "measured_arrivals": 1486075,
+        "on_time_arrivals": 1368467,
+        "on_time_share": 0.92086,
+        "planned_arrivals": 1583110,
+        "service_month": "2025-08"
+      },
+      {
+        "arrivals_without_delay_data": 22691,
+        "cancelled_arrivals": 86912,
+        "cancelled_share": 0.053344,
+        "delayed_arrivals": 497778,
+        "has_delay_data": true,
+        "measured_arrivals": 1519679,
+        "on_time_arrivals": 1368804,
+        "on_time_share": 0.900719,
+        "planned_arrivals": 1629282,
+        "service_month": "2025-09"
+      },
+      {
+        "arrivals_without_delay_data": 30379,
+        "cancelled_arrivals": 98022,
+        "cancelled_share": 0.058618,
+        "delayed_arrivals": 577854,
+        "has_delay_data": true,
+        "measured_arrivals": 1543807,
+        "on_time_arrivals": 1349586,
+        "on_time_share": 0.874193,
+        "planned_arrivals": 1672208,
+        "service_month": "2025-10"
+      },
+      {
+        "arrivals_without_delay_data": 31964,
+        "cancelled_arrivals": 95808,
+        "cancelled_share": 0.059752,
+        "delayed_arrivals": 600959,
+        "has_delay_data": true,
+        "measured_arrivals": 1475645,
+        "on_time_arrivals": 1263322,
+        "on_time_share": 0.856115,
+        "planned_arrivals": 1603417,
+        "service_month": "2025-11"
+      },
+      {
+        "arrivals_without_delay_data": 33031,
+        "cancelled_arrivals": 65511,
+        "cancelled_share": 0.040033,
+        "delayed_arrivals": 494854,
+        "has_delay_data": true,
+        "measured_arrivals": 1537878,
+        "on_time_arrivals": 1393226,
+        "on_time_share": 0.905941,
+        "planned_arrivals": 1636420,
+        "service_month": "2025-12"
+      }
+    ],
+    "reconciliation_not_pass": [
+      {
+        "diff": 12.0,
+        "metric": "cause_count:technical investigation",
+        "ours": 302.0,
+        "period": "2025",
+        "published": 290.0,
+        "status": "explained"
+      }
+    ],
+    "reconciliation_status": {
+      "explained": 1,
+      "pass": 35
+    },
+    "services_files": [
+      {
+        "balanced": true,
+        "clean_rows": 1882743,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-01.csv.gz",
+        "landing_rows": 1882743,
+        "quarantined_rows": 0,
+        "raw_rows": 1882743,
+        "warnings": "{\"warn_unknown_station\":61}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1730320,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-02.csv.gz",
+        "landing_rows": 1730320,
+        "quarantined_rows": 0,
+        "raw_rows": 1730320,
+        "warnings": "{\"warn_unknown_station\":2905}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1902543,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-03.csv.gz",
+        "landing_rows": 1902543,
+        "quarantined_rows": 0,
+        "raw_rows": 1902543,
+        "warnings": "{\"warn_unknown_station\":1979}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1814717,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-04.csv.gz",
+        "landing_rows": 1814717,
+        "quarantined_rows": 0,
+        "raw_rows": 1814717,
+        "warnings": "{\"warn_unknown_station\":48}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1893851,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-05.csv.gz",
+        "landing_rows": 1893851,
+        "quarantined_rows": 0,
+        "raw_rows": 1893851,
+        "warnings": "{\"warn_unknown_station\":4361}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1826165,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-06.csv.gz",
+        "landing_rows": 1826165,
+        "quarantined_rows": 0,
+        "raw_rows": 1826165,
+        "warnings": "{\"warn_unknown_station\":60}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1878543,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-07.csv.gz",
+        "landing_rows": 1878543,
+        "quarantined_rows": 0,
+        "raw_rows": 1878543,
+        "warnings": "{\"warn_unknown_station\":2454}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1832554,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-08.csv.gz",
+        "landing_rows": 1832554,
+        "quarantined_rows": 0,
+        "raw_rows": 1832554,
+        "warnings": "{\"warn_unknown_station\":59}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1845409,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-09.csv.gz",
+        "landing_rows": 1845409,
+        "quarantined_rows": 0,
+        "raw_rows": 1845409,
+        "warnings": "{\"warn_unknown_station\":58}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1952924,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-10.csv.gz",
+        "landing_rows": 1952924,
+        "quarantined_rows": 0,
+        "raw_rows": 1952924,
+        "warnings": "{\"warn_unknown_station\":178}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1826601,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-11.csv.gz",
+        "landing_rows": 1826601,
+        "quarantined_rows": 0,
+        "raw_rows": 1826601,
+        "warnings": "{\"warn_unknown_station\":3926}"
+      },
+      {
+        "balanced": true,
+        "clean_rows": 1839926,
+        "duplicate_rows": 0,
+        "file_name": "services-2025-12.csv.gz",
+        "landing_rows": 1839926,
+        "quarantined_rows": 0,
+        "raw_rows": 1839926,
+        "warnings": "{\"warn_unknown_station\":1536}"
+      }
+    ],
+    "table_rows": {
+      "clean_disruptions": 6676,
+      "clean_services": 22226296,
+      "quarantine": 0,
+      "raw_disruptions": 6676,
+      "raw_services": 22226296
+    }
+  },
+  "generated_on": "2026-11-22",
+  "runs": {
+    "december": {
+      "run_id": "local-2",
+      "table_rows": {
+        "clean_disruptions": 6676,
+        "clean_services": 22226296,
+        "quarantine": 0,
+        "raw_disruptions": 6676,
+        "raw_services": 22226296
+      },
+      "tasks": {
+        "clean": {
+          "details": {
+            "disruptions": {
+              "_file_name": "disruptions-2025.csv",
+              "balanced": true,
+              "clean_rows": 6676,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 6676,
+              "warn_duration_mismatch": 0,
+              "warn_no_end_time": 2
+            },
+            "files": [
+              "services-2025-12.csv.gz"
+            ],
+            "merge": {
+              "inserted": 1839926,
+              "updated": 0
+            },
+            "services": {
+              "clean_rows": 1839926,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 1839926,
+              "warn_unknown_station": 1536
+            }
+          },
+          "files_processed": 1,
+          "rows_in": 1839926,
+          "rows_out": 1839926,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "ingest": {
+          "details": {
+            "mode": "batch",
+            "new_files": [
+              "services-2025-12.csv.gz"
+            ],
+            "snapshots": {
+              "disruptions": 6676,
+              "stations": 591
+            },
+            "unbalanced": []
+          },
+          "files_processed": 1,
+          "rows_in": 1839926,
+          "rows_out": 1839926,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "reconcile": {
+          "details": {
+            "explained": 1,
+            "pass": 35
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 36,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "report": {
+          "details": {
+            "report_disruptions_monthly": 106,
+            "report_operator_monthly": 171,
+            "report_punctuality_monthly": 12
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 289,
+          "rows_quarantined": 0,
+          "status": "ok"
+        }
+      }
+    },
+    "initial": {
+      "run_id": "local-1",
+      "table_rows": {
+        "clean_disruptions": 6676,
+        "clean_services": 20386370,
+        "quarantine": 0,
+        "raw_disruptions": 6676,
+        "raw_services": 20386370
+      },
+      "tasks": {
+        "clean": {
+          "details": {
+            "disruptions": {
+              "_file_name": "disruptions-2025.csv",
+              "balanced": true,
+              "clean_rows": 6676,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 6676,
+              "warn_duration_mismatch": 0,
+              "warn_no_end_time": 2
+            },
+            "files": [
+              "services-2025-01.csv.gz",
+              "services-2025-02.csv.gz",
+              "services-2025-03.csv.gz",
+              "services-2025-04.csv.gz",
+              "services-2025-05.csv.gz",
+              "services-2025-06.csv.gz",
+              "services-2025-07.csv.gz",
+              "services-2025-08.csv.gz",
+              "services-2025-09.csv.gz",
+              "services-2025-10.csv.gz",
+              "services-2025-11.csv.gz"
+            ],
+            "merge": {
+              "inserted": 20386370,
+              "updated": 0
+            },
+            "services": {
+              "clean_rows": 20386370,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 20386370,
+              "warn_unknown_station": 16089
+            }
+          },
+          "files_processed": 11,
+          "rows_in": 20386370,
+          "rows_out": 20386370,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "ingest": {
+          "details": {
+            "mode": "batch",
+            "new_files": [
+              "services-2025-01.csv.gz",
+              "services-2025-02.csv.gz",
+              "services-2025-03.csv.gz",
+              "services-2025-04.csv.gz",
+              "services-2025-05.csv.gz",
+              "services-2025-06.csv.gz",
+              "services-2025-07.csv.gz",
+              "services-2025-08.csv.gz",
+              "services-2025-09.csv.gz",
+              "services-2025-10.csv.gz",
+              "services-2025-11.csv.gz"
+            ],
+            "snapshots": {
+              "disruptions": 6676,
+              "stations": 591
+            },
+            "unbalanced": []
+          },
+          "files_processed": 11,
+          "rows_in": 20386370,
+          "rows_out": 20386370,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "reconcile": {
+          "details": {
+            "explained": 1,
+            "pass": 35
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 36,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "report": {
+          "details": {
+            "report_disruptions_monthly": 106,
+            "report_operator_monthly": 142,
+            "report_punctuality_monthly": 11
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 259,
+          "rows_quarantined": 0,
+          "status": "ok"
+        }
+      }
+    },
+    "rerun": {
+      "run_id": "local-3",
+      "table_rows": {
+        "clean_disruptions": 6676,
+        "clean_services": 22226296,
+        "quarantine": 0,
+        "raw_disruptions": 6676,
+        "raw_services": 22226296
+      },
+      "tasks": {
+        "clean": {
+          "details": {
+            "disruptions": {
+              "_file_name": "disruptions-2025.csv",
+              "balanced": true,
+              "clean_rows": 6676,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 6676,
+              "warn_duration_mismatch": 0,
+              "warn_no_end_time": 2
+            },
+            "files": [],
+            "merge": {
+              "inserted": 0,
+              "updated": 0
+            },
+            "services": {
+              "clean_rows": 0,
+              "duplicate_rows": 0,
+              "quarantined_rows": 0,
+              "raw_rows": 0,
+              "warn_unknown_station": 0
+            }
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 0,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "ingest": {
+          "details": {
+            "mode": "batch",
+            "new_files": [],
+            "snapshots": {
+              "disruptions": 6676,
+              "stations": 591
+            },
+            "unbalanced": []
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 0,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "reconcile": {
+          "details": {
+            "explained": 1,
+            "pass": 35
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 36,
+          "rows_quarantined": 0,
+          "status": "ok"
+        },
+        "report": {
+          "details": {
+            "report_disruptions_monthly": 106,
+            "report_operator_monthly": 171,
+            "report_punctuality_monthly": 12
+          },
+          "files_processed": 0,
+          "rows_in": 0,
+          "rows_out": 289,
+          "rows_quarantined": 0,
+          "status": "ok"
+        }
+      }
+    }
+  },
+  "spark_version": "4.0.1"
+}
