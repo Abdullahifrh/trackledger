@@ -1,0 +1,7 @@
+id,code,uic,name_short,name_medium,name_long,slug,country,type,geo_lat,geo_lng
+50,ASS,8400059,Sloterdijk,Sloterdijk,"Amsterdam Sloterdijk",amsterdam-sloterdijk,NL,knooppuntIntercitystation,52.388889312744,4.8377776145935
+144,DT,8400170,Delft,Delft,Delft,delft,NL,knooppuntIntercitystation,52.00666809082,4.3563890457153
+213,GV,8400280,"Dn Haag HS","Den Haag HS","Den Haag HS",den-haag-hs,NL,knooppuntIntercitystation,52.069721221924,4.3225002288818
+308,LEDN,8400390,"Leiden C","Leiden C.","Leiden Centraal",leiden-centraal,NL,knooppuntIntercitystation,52.166110992432,4.4816665649414
+411,RTD,8400530,"Rotterdm C","Rotterdam C.","Rotterdam Centraal",rotterdam-centraal,NL,megastation,51.92499923706,4.468888759613
+428,SHL,8400561,Schiphol,"Schiphol Airport","Schiphol Airport",schiphol-airport,NL,megastation,52.30944442749,4.7619442939758

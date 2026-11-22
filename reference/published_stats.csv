@@ -1,0 +1,37 @@
+period,metric,value,source_url,retrieved_on,as_shown
+2025-01,disruption_count,656,https://www.rijdendetreinen.nl/en/statistics/2025/01,2026-11-22,656 disruptions
+2025-01,avg_duration_minutes,180,https://www.rijdendetreinen.nl/en/statistics/2025/01,2026-11-22,3 hours
+2025-02,disruption_count,590,https://www.rijdendetreinen.nl/en/statistics/2025/02,2026-11-22,590 disruptions
+2025-02,avg_duration_minutes,141,https://www.rijdendetreinen.nl/en/statistics/2025/02,2026-11-22,"2 hours, 21 minutes"
+2025-03,disruption_count,572,https://www.rijdendetreinen.nl/en/statistics/2025/03,2026-11-22,572 disruptions
+2025-03,avg_duration_minutes,135,https://www.rijdendetreinen.nl/en/statistics/2025/03,2026-11-22,"2 hours, 15 minutes"
+2025-04,disruption_count,522,https://www.rijdendetreinen.nl/en/statistics/2025/04,2026-11-22,522 disruptions
+2025-04,avg_duration_minutes,197,https://www.rijdendetreinen.nl/en/statistics/2025/04,2026-11-22,"3 hours, 17 minutes"
+2025-05,disruption_count,518,https://www.rijdendetreinen.nl/en/statistics/2025/05,2026-11-22,518 disruptions
+2025-05,avg_duration_minutes,120,https://www.rijdendetreinen.nl/en/statistics/2025/05,2026-11-22,2 hours
+2025-06,disruption_count,589,https://www.rijdendetreinen.nl/en/statistics/2025/06,2026-11-22,589 disruptions
+2025-06,avg_duration_minutes,321,https://www.rijdendetreinen.nl/en/statistics/2025/06,2026-11-22,"5 hours, 21 minutes"
+2025-07,disruption_count,526,https://www.rijdendetreinen.nl/en/statistics/2025/07,2026-11-22,526 disruptions
+2025-07,avg_duration_minutes,129,https://www.rijdendetreinen.nl/en/statistics/2025/07,2026-11-22,"2 hours, 9 minutes"
+2025-08,disruption_count,485,https://www.rijdendetreinen.nl/en/statistics/2025/08,2026-11-22,485 disruptions
+2025-08,avg_duration_minutes,174,https://www.rijdendetreinen.nl/en/statistics/2025/08,2026-11-22,"2 hours, 54 minutes"
+2025-09,disruption_count,565,https://www.rijdendetreinen.nl/en/statistics/2025/09,2026-11-22,565 disruptions
+2025-09,avg_duration_minutes,175,https://www.rijdendetreinen.nl/en/statistics/2025/09,2026-11-22,"2 hours, 55 minutes"
+2025-10,disruption_count,593,https://www.rijdendetreinen.nl/en/statistics/2025/10,2026-11-22,593 disruptions
+2025-10,avg_duration_minutes,149,https://www.rijdendetreinen.nl/en/statistics/2025/10,2026-11-22,"2 hours, 29 minutes"
+2025-11,disruption_count,541,https://www.rijdendetreinen.nl/en/statistics/2025/11,2026-11-22,541 disruptions
+2025-11,avg_duration_minutes,171,https://www.rijdendetreinen.nl/en/statistics/2025/11,2026-11-22,"2 hours, 51 minutes"
+2025-12,disruption_count,519,https://www.rijdendetreinen.nl/en/statistics/2025/12,2026-11-22,519 disruptions
+2025-12,avg_duration_minutes,101,https://www.rijdendetreinen.nl/en/statistics/2025/12,2026-11-22,"1 hour, 41 minutes"
+2025,disruption_count,6676,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,"6,676 disruptions"
+2025,avg_duration_minutes,167,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,"2 hours, 47 minutes"
+2025,cause_count:broken down train,2424,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,"Broken down train: 2,424 disruptions"
+2025,cause_count:signal failure,511,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Signal failure: 511 disruptions
+2025,cause_count:collision,404,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Collision: 404 disruptions
+2025,cause_count:stranded train,399,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Stranded train: 399 disruptions
+2025,cause_count:points failure,379,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Points failure: 379 disruptions
+2025,cause_count:technical investigation,290,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Technical investigation: 290 disruptions
+2025,cause_count:person on the railway track,222,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Person on the railway track: 222 disruptions
+2025,cause_count:an emergency call,180,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,An emergency call: 180 disruptions
+2025,cause_count:defective railway track,141,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Defective railway track: 141 disruptions
+2025,cause_count:problems with the rolling stock,122,https://www.rijdendetreinen.nl/en/statistics/2025,2026-11-22,Problems with the rolling stock: 122 disruptions

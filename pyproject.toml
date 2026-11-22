@@ -1,0 +1,23 @@
+[project]
+name = "trackledger"
+version = "0.1.0"
+description = "Self-checking rail operations reporting on Databricks"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP", "PLC0415"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 1
+known-first-party = ["trackledger"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-q"

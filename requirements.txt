@@ -1,0 +1,6 @@
+# Local development and CI: Python 3.11+, Java 17+
+# On Windows use Python 3.11; PySpark workers crash on 3.12+ (SPARK-53759)
+pyspark==4.0.1
+py4j==0.10.9.9
+pytest==8.4.2
+ruff==0.14.5
