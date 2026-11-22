@@ -1,0 +1,514 @@
+{
+  "datasets": [
+    {
+      "name": "9bd450f6",
+      "displayName": "How did the network perform?",
+      "queryLines": [
+        "SELECT\r\n",
+        "  service_month,\r\n",
+        "  on_time_share,\r\n",
+        "  cancelled_share,\r\n",
+        "  planned_arrivals\r\n",
+        "FROM workspace.trackledger.report_punctuality_monthly\r\n",
+        "ORDER BY service_month;\r\n"
+      ]
+    },
+    {
+      "name": "bad56c48",
+      "displayName": "What caused the disruptions?",
+      "queryLines": [
+        "SELECT\r\n",
+        "  d.start_month,\r\n",
+        "  d.cause_group,\r\n",
+        "  d.disruptions,\r\n",
+        "  r.published AS published_total,\r\n",
+        "  r.status AS reconciliation_status\r\n",
+        "FROM workspace.trackledger.report_disruptions_monthly AS d\r\n",
+        "LEFT JOIN workspace.trackledger.reconciliation AS r\r\n",
+        "  ON r.period = d.start_month\r\n",
+        "  AND r.metric = 'disruption_count'\r\n",
+        "ORDER BY d.start_month, d.cause_group;"
+      ]
+    },
+    {
+      "name": "c3b2d340",
+      "displayName": "How did each operator perform?",
+      "queryLines": [
+        "SELECT\r\n",
+        "  operator,\r\n",
+        "  SUM(planned_arrivals) AS planned_arrivals,\r\n",
+        "  SUM(CASE WHEN has_delay_data THEN on_time_arrivals END)\r\n",
+        "    / SUM(CASE WHEN has_delay_data THEN measured_arrivals END) AS on_time_share,\r\n",
+        "  SUM(cancelled_arrivals) / SUM(planned_arrivals) AS cancelled_share\r\n",
+        "FROM workspace.trackledger.report_operator_monthly\r\n",
+        "GROUP BY operator\r\n",
+        "ORDER BY planned_arrivals DESC;"
+      ]
+    },
+    {
+      "name": "fbf443d3",
+      "displayName": "Can I trust the numbers?",
+      "queryLines": [
+        "WITH last_run AS (\r\n",
+        "  SELECT run_id\r\n",
+        "  FROM workspace.trackledger.run_log\r\n",
+        "  ORDER BY finished_at DESC\r\n",
+        "  LIMIT 1\r\n",
+        "),\r\n",
+        "tasks AS (\r\n",
+        "  SELECT l.*\r\n",
+        "  FROM workspace.trackledger.run_log AS l\r\n",
+        "  JOIN last_run USING (run_id)\r\n",
+        "),\r\n",
+        "ledger AS (\r\n",
+        "  SELECT\r\n",
+        "    COUNT(*) AS files_loaded,\r\n",
+        "    SUM(raw_rows) AS rows_loaded,\r\n",
+        "    SUM(CASE WHEN balanced THEN 0 ELSE 1 END) AS unbalanced_files\r\n",
+        "  FROM workspace.trackledger.file_ledger\r\n",
+        "  WHERE dataset = 'services' AND stage = 'clean'\r\n",
+        "),\r\n",
+        "recon AS (\r\n",
+        "  SELECT\r\n",
+        "    SUM(CASE WHEN status = 'pass' THEN 1 ELSE 0 END) AS checks_passed,\r\n",
+        "    SUM(CASE WHEN status = 'explained' THEN 1 ELSE 0 END) AS checks_explained,\r\n",
+        "    SUM(CASE WHEN status = 'fail' THEN 1 ELSE 0 END) AS checks_failed\r\n",
+        "  FROM workspace.trackledger.reconciliation\r\n",
+        ")\r\n",
+        "SELECT\r\n",
+        "  MAX(t.run_id) AS run_id,\r\n",
+        "  MAX(t.finished_at) AS finished_at,\r\n",
+        "  MAX(CASE WHEN t.task = 'ingest' THEN t.files_processed END) AS new_files,\r\n",
+        "  MAX(CASE WHEN t.task = 'clean' THEN t.rows_quarantined END) AS rows_quarantined,\r\n",
+        "  MAX(CASE WHEN t.task = 'reconcile' THEN t.status END) AS reconcile_status,\r\n",
+        "  MAX(l.files_loaded) AS files_loaded,\r\n",
+        "  MAX(l.rows_loaded) AS rows_loaded,\r\n",
+        "  MAX(l.unbalanced_files) AS unbalanced_files,\r\n",
+        "  MAX(r.checks_passed) AS checks_passed,\r\n",
+        "  MAX(r.checks_explained) AS checks_explained,\r\n",
+        "  MAX(r.checks_failed) AS checks_failed\r\n",
+        "FROM tasks AS t\r\n",
+        "CROSS JOIN ledger AS l\r\n",
+        "CROSS JOIN recon AS r;"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "20bd1aa4",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "punctuality_trend",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "9bd450f6",
+                  "fields": [
+                    {
+                      "name": "service_month",
+                      "expression": "`service_month`"
+                    },
+                    {
+                      "name": "avg(on_time_share)",
+                      "expression": "AVG(`on_time_share`)"
+                    },
+                    {
+                      "name": "avg(cancelled_share)",
+                      "expression": "AVG(`cancelled_share`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": "On-time and cancellations by month"
+              },
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "service_month",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fields": [
+                    {
+                      "fieldName": "avg(on_time_share)",
+                      "displayName": "On-time share"
+                    },
+                    {
+                      "fieldName": "avg(cancelled_share)",
+                      "displayName": "Cancelled share"
+                    }
+                  ],
+                  "format": {
+                    "decimalPlaces": {
+                      "places": 1,
+                      "type": "max"
+                    },
+                    "type": "number-percent"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "operator_performance",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "c3b2d340",
+                  "fields": [
+                    {
+                      "name": "operator",
+                      "expression": "`operator`"
+                    },
+                    {
+                      "name": "sum(planned_arrivals)",
+                      "expression": "SUM(`planned_arrivals`)"
+                    },
+                    {
+                      "name": "avg(on_time_share)",
+                      "expression": "AVG(`on_time_share`)"
+                    },
+                    {
+                      "name": "avg(cancelled_share)",
+                      "expression": "AVG(`cancelled_share`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": "Operator performance"
+              },
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "operator",
+                    "displayName": "Operator"
+                  },
+                  {
+                    "fieldName": "sum(planned_arrivals)",
+                    "headerAlignment": "right",
+                    "displayName": "Planned arrivals"
+                  },
+                  {
+                    "fieldName": "avg(on_time_share)",
+                    "format": {
+                      "decimalPlaces": {
+                        "places": 1,
+                        "type": "max"
+                      },
+                      "type": "number-percent"
+                    },
+                    "headerAlignment": "right",
+                    "displayName": "On-time share"
+                  },
+                  {
+                    "fieldName": "avg(cancelled_share)",
+                    "format": {
+                      "decimalPlaces": {
+                        "places": 1,
+                        "type": "max"
+                      },
+                      "type": "number-percent"
+                    },
+                    "headerAlignment": "right",
+                    "displayName": "Cancelled share"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "run_health",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "fbf443d3",
+                  "fields": [
+                    {
+                      "name": "run_id",
+                      "expression": "`run_id`"
+                    },
+                    {
+                      "name": "finished_at",
+                      "expression": "`finished_at`"
+                    },
+                    {
+                      "name": "new_files",
+                      "expression": "`new_files`"
+                    },
+                    {
+                      "name": "rows_quarantined",
+                      "expression": "`rows_quarantined`"
+                    },
+                    {
+                      "name": "reconcile_status",
+                      "expression": "`reconcile_status`"
+                    },
+                    {
+                      "name": "files_loaded",
+                      "expression": "`files_loaded`"
+                    },
+                    {
+                      "name": "rows_loaded",
+                      "expression": "`rows_loaded`"
+                    },
+                    {
+                      "name": "unbalanced_files",
+                      "expression": "`unbalanced_files`"
+                    },
+                    {
+                      "name": "checks_passed",
+                      "expression": "`checks_passed`"
+                    },
+                    {
+                      "name": "checks_explained",
+                      "expression": "`checks_explained`"
+                    },
+                    {
+                      "name": "checks_failed",
+                      "expression": "`checks_failed`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": "Latest run health"
+              },
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "run_id",
+                    "displayName": "Run"
+                  },
+                  {
+                    "fieldName": "finished_at",
+                    "displayName": "Finished at"
+                  },
+                  {
+                    "fieldName": "new_files",
+                    "headerAlignment": "right",
+                    "displayName": "New files"
+                  },
+                  {
+                    "fieldName": "rows_quarantined",
+                    "headerAlignment": "right",
+                    "displayName": "Rows quarantined"
+                  },
+                  {
+                    "fieldName": "reconcile_status",
+                    "displayName": "Reconcile status"
+                  },
+                  {
+                    "fieldName": "files_loaded",
+                    "headerAlignment": "right",
+                    "displayName": "Files loaded"
+                  },
+                  {
+                    "fieldName": "rows_loaded",
+                    "headerAlignment": "right",
+                    "displayName": "Rows loaded"
+                  },
+                  {
+                    "fieldName": "unbalanced_files",
+                    "headerAlignment": "right",
+                    "displayName": "Unbalanced files"
+                  },
+                  {
+                    "fieldName": "checks_passed",
+                    "headerAlignment": "right",
+                    "displayName": "Checks passed"
+                  },
+                  {
+                    "fieldName": "checks_explained",
+                    "headerAlignment": "right",
+                    "displayName": "Checks explained"
+                  },
+                  {
+                    "fieldName": "checks_failed",
+                    "headerAlignment": "right",
+                    "displayName": "Checks failed"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "disruptions_by_cause",
+            "queries": [
+              {
+                "name": "combo_primary_1",
+                "query": {
+                  "datasetName": "bad56c48",
+                  "fields": [
+                    {
+                      "name": "start_month",
+                      "expression": "`start_month`"
+                    },
+                    {
+                      "name": "sum(disruptions)",
+                      "expression": "SUM(`disruptions`)"
+                    },
+                    {
+                      "name": "cause_group",
+                      "expression": "`cause_group`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              },
+              {
+                "name": "combo_secondary_1",
+                "query": {
+                  "datasetName": "bad56c48",
+                  "fields": [
+                    {
+                      "name": "start_month",
+                      "expression": "`start_month`"
+                    },
+                    {
+                      "name": "max(published_total)",
+                      "expression": "MAX(`published_total`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": "Disruptions by cause vs published total"
+              },
+              "version": 2,
+              "widgetType": "combo",
+              "encodings": {
+                "x": {
+                  "fieldName": "start_month",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "primary": {
+                    "layers": [
+                      {
+                        "encodings": {
+                          "value": {
+                            "fieldName": "sum(disruptions)"
+                          },
+                          "color": {
+                            "fieldName": "cause_group",
+                            "scale": {
+                              "type": "categorical"
+                            }
+                          }
+                        },
+                        "visual": "bar",
+                        "queryName": "combo_primary_1"
+                      }
+                    ],
+                    "scale": {
+                      "type": "quantitative"
+                    }
+                  },
+                  "secondary": {
+                    "layers": [
+                      {
+                        "encodings": {
+                          "value": {
+                            "fieldName": "max(published_total)",
+                            "displayName": "Published total"
+                          }
+                        },
+                        "visual": "line",
+                        "queryName": "combo_secondary_1"
+                      }
+                    ],
+                    "scale": {
+                      "type": "quantitative"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}

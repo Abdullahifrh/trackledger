@@ -1,0 +1,37 @@
+resources:
+  jobs:
+    trackledger_monthly:
+      name: trackledger-monthly
+      schedule:
+        quartz_cron_expression: 42 0 6 2 * ?
+        timezone_id: Europe/Amsterdam
+        pause_status: UNPAUSED
+      tasks:
+        - task_key: ingest
+          notebook_task:
+            notebook_path: /Workspace/Users/${workspace.current_user.userName}/trackledger/tasks/ingest_landing
+            source: WORKSPACE
+        - task_key: clean
+          depends_on:
+            - task_key: ingest
+          notebook_task:
+            notebook_path: /Workspace/Users/${workspace.current_user.userName}/trackledger/tasks/build_clean
+            source: WORKSPACE
+        - task_key: report
+          depends_on:
+            - task_key: clean
+          notebook_task:
+            notebook_path: /Workspace/Users/${workspace.current_user.userName}/trackledger/tasks/build_report
+            source: WORKSPACE
+        - task_key: reconcile
+          depends_on:
+            - task_key: report
+          notebook_task:
+            notebook_path: /Workspace/Users/${workspace.current_user.userName}/trackledger/tasks/check_published
+            source: WORKSPACE
+      queue:
+        enabled: true
+      parameters:
+        - name: run_id
+          default: "{{job.run_id}}"
+      performance_target: PERFORMANCE_OPTIMIZED
